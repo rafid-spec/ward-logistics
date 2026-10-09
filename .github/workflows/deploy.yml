@@ -1,15 +1,11 @@
 name: Deploy to GitHub Pages
 
-# Builds the static export and publishes it with GitHub Pages
+# Builds the static export and publishes it to the public Pages repo
 # (salahu01/ward-logistics → https://salahu01.github.io/ward-logistics/).
-# Manual for now: enable Pages (Source: GitHub Actions) in repo settings first.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: deploy-pages
@@ -18,9 +14,6 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -39,9 +32,11 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /ward-logistics
           NEXT_PUBLIC_SITE_URL: https://salahu01.github.io/ward-logistics
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Publish to salahu01/ward-logistics
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: ./out
-
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          deploy_key: ${{ secrets.PAGES_DEPLOY_KEY }}
+          external_repository: salahu01/ward-logistics
+          publish_branch: main
+          publish_dir: ./out
+          commit_message: "deploy: ${{ github.event.head_commit.message || 'manual run' }}"
