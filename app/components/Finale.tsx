@@ -95,7 +95,11 @@ export default function Finale({ t }: { t: Dict }) {
         </div>
 
         <div className="footer-mark display" aria-hidden="true">
-          {t.footer.mark}
+          <div className="footer-mark-track">
+            {[0, 1].map((i) => (
+              <span key={i}>{t.footer.mark} ✦ {t.footer.mark} ✦&nbsp;</span>
+            ))}
+          </div>
         </div>
 
         <div className="footer-base mono">

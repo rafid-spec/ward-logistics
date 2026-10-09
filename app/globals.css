@@ -1838,11 +1838,31 @@ html.is-ready .sun {
   font-size: calc((100vw - 2 * var(--gutter)) / 6.75);
   line-height: 0.76;
   white-space: nowrap;
+  overflow: hidden;
+  user-select: none;
+}
+.footer-mark-track {
+  display: flex;
+  width: max-content;
+  animation: footer-marquee 40s linear infinite;
+}
+.footer-mark-track > span {
   background: linear-gradient(to bottom, rgba(241, 236, 227, 0.16), rgba(241, 236, 227, 0) 92%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  user-select: none;
+}
+@keyframes footer-marquee {
+  to { transform: translateX(-50%); }
+}
+[dir="rtl"] .footer-mark-track {
+  animation-name: footer-marquee-rtl;
+}
+@keyframes footer-marquee-rtl {
+  to { transform: translateX(50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-mark-track { animation: none; }
 }
 .footer-base {
   display: flex;
