@@ -307,7 +307,7 @@ export function GlobeScene() {
           <circle key={i} cx={x} cy={y} r="3.5" className="gl-node" />
         ))}
         <circle cx="262" cy="236" r="6" className="gl-hq" />
-        <text x="272" y="230" className="gl-label">MUSCAT</text>
+        <text x="272" y="230" className="gl-label">SOHAR</text>
       </L>
       <L z={1.15}>
         <ellipse cx="210" cy="250" rx="180" ry="46" className="gl-orbit" transform="rotate(-18 210 250)" />

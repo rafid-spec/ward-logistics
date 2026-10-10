@@ -50,7 +50,7 @@ export default function Intro({ t }: { t: Dict }) {
         <div className="intro-bar">
           <span />
         </div>
-        <span className="mono intro-coords">23.5880° N · 58.3829° E</span>
+        <span className="mono intro-coords">24.3474° N · 56.7454° E</span>
       </div>
     </div>
   );

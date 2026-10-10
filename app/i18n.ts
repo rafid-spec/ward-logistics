@@ -7,8 +7,8 @@ export const isLang = (v: string): v is Lang => (langs as readonly string[]).inc
 export type SceneKey = "blueprint" | "crane" | "globe" | "customs" | "refinery";
 
 const scenes: SceneKey[] = ["blueprint", "crane", "globe", "customs", "refinery"];
-const phones = { md: "+968 99494253" };
-const emails: string[] = [];
+const phones = { md: "+968 99494253", sales: "+968 99433000" };
+const emails: string[] = ["Contact@abuward.com", "abuwardforbusiness@gmail.com"];
 
 const en = {
   lang: "en" as Lang,
@@ -237,6 +237,7 @@ const en = {
   contacts: {
     people: [
       { name: "Rafeeck Vazhayil", role: "Managing Director", phone: phones.md, email: undefined as string | undefined },
+      { name: "Muhammed Rafid", role: "Sales & Marketing", phone: phones.sales, email: "Rafid@abuward.com" as string | undefined },
     ],
     emails,
     registry: "C.R. No. 1635804",
@@ -473,6 +474,7 @@ const ar: Dict = {
   contacts: {
     people: [
       { name: "رفيق وازهايل", role: "المدير العام", phone: phones.md, email: undefined },
+      { name: "محمد رافد", role: "المبيعات والتسويق", phone: phones.sales, email: "Rafid@abuward.com" },
     ],
     emails,
     registry: "سجل تجاري رقم 1635804",
