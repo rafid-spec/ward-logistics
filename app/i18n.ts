@@ -8,7 +8,7 @@ export type SceneKey = "blueprint" | "crane" | "globe" | "customs" | "refinery";
 
 const scenes: SceneKey[] = ["blueprint", "crane", "globe", "customs", "refinery"];
 const phones = { md: "+968 99494253", sales: "+968 99433000" };
-const emails: string[] = ["Contact@abuward.com", "abuwardforbusiness@gmail.com"];
+const emails: string[] = ["Rafeeck@abuward.com", "abuwardforbusiness@gmail.com", "wardlogisticsoman@gmail.com"];
 
 const en = {
   lang: "en" as Lang,
